@@ -22,7 +22,7 @@ namespace parkinglot.Database.Model
         [Column("enter")]
         public DateTime enter { get; set; }
         [Column("exit")]
-        public DateTime exit { get; set; }
+        public DateTime? exit { get; set; }
 
     }
 }
