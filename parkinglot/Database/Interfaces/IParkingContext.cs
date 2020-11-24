@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace parkinglot.Database.Interfaces
 {
-    interface IParkingContext
+    public interface IParkingContext
     {
         string EnterNewClient(Car car);
         double ExitClient(string clientId);
