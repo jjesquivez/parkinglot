@@ -9,6 +9,6 @@ namespace parkinglot.Database.Interfaces
     interface IParkingContext
     {
         string EnterNewClient(Car car);
-        double ExitClient()
+        double ExitClient(string clientId);
     }
 }

@@ -39,7 +39,7 @@ namespace parkinglot.Database
                 };
                 clientsModels.Add(client);
                 SaveChangesAsync();
-                code = "";
+                code = client.id;
             }
             catch(Exception ex)
             {
@@ -48,7 +48,22 @@ namespace parkinglot.Database
             return code;
         }
 
-        
+        public double ExitClient(string clientId)
+        {
+            double payment = 0;
+            try
+            {
+                var enteredTime = clientsModels.Find(clientId).enter;
+                var now = DateTime.Now;
+                var timePassed = now - enteredTime;
+                payment = timePassed.TotalMinutes / 60 * 10;
+            }
+            catch(Exception ex)
+            {
+                throw;
+            }
+            return payment;
+        }
         #endregion
     }
 }
